@@ -1,0 +1,15 @@
+[Unit]
+Description=Simple HTTP Server
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/python3 /opt/simple_http_server/simple_http_server.py
+WorkingDirectory=/opt/simple_http_server
+Restart=always
+User=nobody
+Group=nogroup
+StandardOutput=append:/var/log/simple_http_server.log
+StandardError=append:/var/log/simple_http_server.log
+
+[Install]
+WantedBy=multi-user.target
