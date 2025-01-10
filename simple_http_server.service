@@ -1,5 +1,5 @@
 [Unit]
-Description= Simple HTTP Server
+Description=Simple HTTP Server
 After=network.target
 
 [Service]
